@@ -49,38 +49,40 @@ class ContentList {
 })
 export class ContentCardComponent implements OnInit {
        title: string;
-       title2: string;
-       content: Content;
-       content2: Content;
+       content: Content[];
        cList: ContentList;
-       cList2: ContentList;
-  constructor() {
-      this.title = '<strong>Angular!</strong>';
-      this.content = {
-          id: 1,
-          author: 'Matt',
-          imgUrl: 'https://angular.io/assets/images/logos/angular/angular.png',
-          type: 'news',
-          title: 'Angular',
-          body: 'This is the body of the content',
-          tags: '123'
-      };
-      this.cList = new ContentList();
-      this.cList.add(this.content);
-
-      this.title2 = '<strong>JavaScript!</strong>';
-      this.content2 = {
-          id: 2,
-          author: 'Chris',
-          imgUrl: 'https://angular.io/assets/images/logos/angular/angular.png',
-          type: 'JSNews',
-          title: 'JavaScript',
-          body: 'This is the body of the content',
-          tags: '1234'
-      };
-      this.cList2 = new ContentList();
-      this.cList2.add(this.content);
-  }
+    constructor() {
+        this.title = '<strong>Angular!</strong>';
+        this.content = [{
+            id: 1,
+            author: 'Matt',
+            imgUrl: 'https://angular.io/assets/images/logos/angular/angular.png',
+            type: 'Cool Stuff',
+            title: 'Javascript',
+            body: 'This is the body of the content',
+            tags: '123'
+        }, {
+            id: 2,
+            author: 'Chris',
+            imgUrl: 'https://angular.io/assets/images/logos/angular/angular.png',
+            type: 'news',
+            title: 'Java',
+            body: 'This is the second body of the content',
+            tags: '1234'
+        }, {
+            id: 3,
+            author: 'Alex',
+            imgUrl: 'https://angular.io/assets/images/logos/angular/angular.png',
+            type: 'Facts',
+            title: 'Angular',
+            body: 'This is the second body of the content',
+            tags: '12345'
+        }];
+        this.cList = new ContentList();
+        this.cList.add(this.content[0]);
+        this.cList.add(this.content[1]);
+        this.cList.add(this.content[2]);
+    }
 
   ngOnInit() {
   }
