@@ -1,0 +1,25 @@
+
+
+
+<div class="band-card-wrapper">
+  <img class="band-image" (click)="displayId()" src="{{ band.imgUrl }}">
+  <div class="band-body">
+    <strong>Matt's opinion piece:</strong> <br>
+    {{ band.body }}
+  </div>
+  <div class="band-author">
+    <strong>Fan name:</strong> {{ band.author }}
+  </div>
+  <div class="band-title">
+    <strong>Band Name:</strong> {{ band.title }}
+  </div>
+  <div class="band-type">
+    <strong>Genre:</strong> {{ band.type }}
+  </div>
+  <div class="band-tags" *ngIf="band.tags">
+    <h4>Tags:</h4>
+    <div *ngFor="let tag of band.tags">
+      {{ tag }}
+    </div>
+  </div>
+</div>
