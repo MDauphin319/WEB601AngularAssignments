@@ -1,0 +1,18 @@
+:host{
+  max-width: 500px;
+  display: block;
+  border: 1px solid #f00;
+  margin: 5px auto;
+}
+:host.is-last{
+  border: 2px solid #000;
+}
+.band-card-wrapper{
+  text-align: center;
+  padding: 16px;
+}
+.band-image{
+  width: 100%;
+  max-width: 450px;
+  display: inline-block;
+}

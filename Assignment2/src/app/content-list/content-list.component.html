@@ -1,3 +1,1 @@
-<p>content-list works!</p>
-<h2>All Content</h2>
-<app-content-card *ngFor="let item of content; index as i; first as isFirst" [inputContent]="item" [class.is-first]="isFirst"></app-content-card>
+<app-content-card *ngFor="let band of bandList; last as isLast" [band]="band" [class.is-last]="isLast"></app-content-card>

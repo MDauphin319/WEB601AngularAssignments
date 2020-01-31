@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Content} from './content-card-helper';
+import {Component, Input, OnInit} from '@angular/core';
+import {Content} from '../content-card/content-card-helper';
 
 @Component({
   selector: 'app-content-card',
@@ -7,12 +7,12 @@ import {Content} from './content-card-helper';
   styleUrls: ['./content-card.component.css']
 })
 export class ContentCardComponent implements OnInit {
-    @Input() inputContent: Content;
-    constructor() {
-    }
+  @Input() band: Content;
+  constructor() { }
 
   ngOnInit() {
   }
-
-
+  displayId(): void {
+    console.log('Current id is: ', this.band.id);
+  }
 }
