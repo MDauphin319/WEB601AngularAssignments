@@ -81,10 +81,15 @@ export class ContentListComponent implements OnInit {
 
   CheckTitle(title:string) {
     let isExist: boolean = false;
-    for (let i of this.bandList) {
-      if(i.title === title){ isExist = true; }
+    for (const i of this.bandList) {
+      if (i.title === title) {
+        isExist = true;
+      }
     }
-    if(isExist)confirm('Found');
-    else { confirm('Not Found'); }
+    if (isExist) {
+      confirm('Found');
+    } else {
+      confirm('Not Found');
+    }
   }
 }
