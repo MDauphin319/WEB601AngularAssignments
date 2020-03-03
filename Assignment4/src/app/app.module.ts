@@ -9,6 +9,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { FilterTypePipe } from './filter-type.pipe';
 import {FormsModule} from '@angular/forms';
 import { AttributeDirective } from './attribute.directive';
+import { CreateContentComponent } from './create-content/create-content.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AttributeDirective } from './attribute.directive';
     SafePipe,
     ContentListComponent,
     FilterTypePipe,
-    AttributeDirective
+    AttributeDirective,
+    CreateContentComponent
   ],
   imports: [
     BrowserModule,
