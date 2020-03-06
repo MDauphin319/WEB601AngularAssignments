@@ -1,0 +1,10 @@
+<app-create-content class="center" (addContentEvent)="addContent($event)"></app-create-content>
+
+<div class="center">
+  Input the title: <input [(ngModel)]="title">
+  <br><br>
+  <input type="button" value="Title check" (click)="CheckTitle(title)">
+</div>
+
+<app-content-card *ngFor="let band of (bandList | filterType: 'News');"  [band]="band" [class.news]="band"></app-content-card>
+<app-content-card *ngFor="let band of (bandList | filterType: 'Story');"  [band]="band" [class.story]="band"></app-content-card>

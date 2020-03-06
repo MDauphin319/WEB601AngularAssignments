@@ -1,0 +1,13 @@
+.showMessage{
+  margin: auto;
+  width: 30%;
+  text-align: center;
+  border: coral 1px solid;
+  border-radius: 20px;
+}
+
+button {
+  background-color: coral;
+  color: white;
+  border-radius: 20px;
+}

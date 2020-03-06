@@ -1,0 +1,11 @@
+<div>
+  Title: <input [(ngModel)]="title"><br>
+  Author: <input [(ngModel)]="author"><br>
+  Body: <input [(ngModel)]="body"><br>
+  Type: <input [(ngModel)]="type"><br>
+  Image Url: <input [(ngModel)]="imgUrl"><br>
+  Single Tag: <input [(ngModel)]="tag"><br><br>
+  <input type="button" value="Add Content" (click)="addContent()">
+  <div style="color: red;" *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>
+<br>
