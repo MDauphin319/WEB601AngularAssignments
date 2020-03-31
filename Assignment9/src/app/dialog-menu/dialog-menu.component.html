@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Fill in the content form</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Title:</mat-label>
+    <input matInput placeholder="" [(ngModel)]="data.newBandItem.title"><br>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Author:</mat-label>
+    <input matInput placeholder="" [(ngModel)]="data.newBandItem.author"><br>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Body:</mat-label>
+    <input matInput placeholder="" [(ngModel)]="data.newBandItem.body"><br>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Type:</mat-label>
+    <input matInput placeholder="" [(ngModel)]="data.newBandItem.type"><br>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Image Url:</mat-label>
+    <input matInput placeholder="" [(ngModel)]="data.newBandItem.imgUrl"><br>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Single Tag:</mat-label>
+    <input matInput placeholder="" [(ngModel)]="data.newBandItem.tags"><br><br>
+  </mat-form-field><br>
+</div>
+<br>
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="data.newBandItem" cdkFocusInitial>Add New Item!</button>
+</div>

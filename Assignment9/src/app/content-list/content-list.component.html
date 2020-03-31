@@ -1,0 +1,21 @@
+<app-create-content class="center" (addContentEvent)="addContent($event)" (updateContentEvent)="updateContent($event)"></app-create-content>
+
+<div class="center" mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Input the Band Name:</mat-label> <input matInput placeholder="" [(ngModel)]="title">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="warn"(click)="CheckTitle(title)">Find Band!</button>
+  <br>
+</div>
+
+<mat-list>
+  <mat-card>
+    <app-content-card *ngFor="let band of (bandList | filterType: 'News');"  [band]="band" [class.news]="band"></app-content-card>
+  </mat-card>
+  <mat-divider></mat-divider>
+  <mat-card>
+    <app-content-card *ngFor="let band of (bandList | filterType: 'Story');"  [band]="band" [class.story]="band"></app-content-card>
+  </mat-card>
+</mat-list>
+
