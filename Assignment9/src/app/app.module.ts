@@ -21,8 +21,11 @@ import { DialogMenuComponent } from './dialog-menu/dialog-menu.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
-import {MatChipsModule} from "@angular/material/chips";
-import {MatBadgeModule} from "@angular/material/badge";
+import {MatChipsModule} from '@angular/material/chips';
+import {MatBadgeModule} from '@angular/material/badge';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import {MatBadgeModule} from "@angular/material/badge";
     AttributeDirective,
     CreateContentComponent,
     AppMessagesComponent,
-    DialogMenuComponent
+    DialogMenuComponent,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,8 @@ import {MatBadgeModule} from "@angular/material/badge";
     MatDialogModule,
     MatCardModule,
     MatListModule,
+    MatChipsModule,
+    MatBadgeModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -52,10 +59,11 @@ import {MatBadgeModule} from "@angular/material/badge";
         dataEncapsulation: false,
         delay: 1000
       }),
-    MatCardModule,
-    MatListModule,
-    MatChipsModule,
-    MatBadgeModule,
+    RouterModule.forRoot([
+      { path: 'content/:id', component: ContentDetailComponent },
+      { path: '', component: ContentListComponent },
+      { path: '**', component: NotFoundComponent }
+    ]),
   ],
   entryComponents: [
     DialogMenuComponent

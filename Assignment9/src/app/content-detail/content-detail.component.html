@@ -1,0 +1,34 @@
+<img class="band-image" (click)="displayId()" *ngIf="band.imgUrl" src="{{ band.imgUrl }}" />
+<img class="band-image" (click)="displayId()" *ngIf="!band.imgUrl" src="{{ 'https://editions.lib.umn.edu/electionacademy/wp-content/uploads/sites/3/2016/11/NO.jpg' }}" />
+<div class="band-title">
+  <strong>Band Name:</strong> {{ band.title }}
+</div>
+<div class="band-body">
+  <strong appAttribute>Matt's opinion piece:</strong> <br>
+  {{ band.body }}
+</div>
+<div class="band-author">
+  <strong>Fan name:</strong> {{ band.author }}
+</div>
+<div class="band-type">
+  <strong>Genre:</strong> {{ band.type }}
+</div>
+<div class="band-tags" *ngIf="band.tags">
+  <h4>Tags:</h4>
+  <div appAttribute font="true" *ngFor="let tag of band.tags">
+    {{ tag }}
+  </div>
+</div>
+<br>
+<div class="center">
+  <mat-chip-list>
+    <mat-chip>Music</mat-chip>
+    <mat-chip>Bands</mat-chip>
+    <mat-chip>Albums</mat-chip>
+  </mat-chip-list>
+</div>
+<br>
+<span matBadge="10" matBadgeOverlap="false">You have notifications</span>
+
+
+

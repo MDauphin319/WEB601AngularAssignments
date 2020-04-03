@@ -30,21 +30,23 @@ export class ContentListComponent implements OnInit {
       confirm('Not Found');
     }
   }
-  addContent(band: Content): void {
-    this.contentService.addContent(band).subscribe(c => {
-    this.bandList.push(band);
-    const clonedBandList  = Object.assign([], this.bandList);
-    this.bandList = clonedBandList;
-    });
+  addContent(newBandFromChild: Content) {
+    this.contentService.addContent(newBandFromChild)
+      .subscribe(c => {
+        this.bandList.push(c);
+        const myClonedArray  = Object.assign([], this.bandList);
+        this.bandList = myClonedArray;
+      });
   }
-  updateContent(updateBand: Content): void {
-    this.contentService.updateContent(updateBand).subscribe(u => {
-      const itemToUpdate = this.bandList.find(c => c.id === updateBand.id);
-      const itemToUpdateId = this.bandList.indexOf(itemToUpdate);
-      this.bandList[itemToUpdateId] = updateBand;
-      const myClonedArray  = Object.assign([], this.bandList);
-      this.bandList = myClonedArray;
-      console.log('Content updated');
-    });
+  updateContent(updatedBandFromChild: Content) {
+    this.contentService.updateContent(updatedBandFromChild)
+      .subscribe(() => {
+        const itemToUpdate = this.bandList.find(c => c.id === updatedBandFromChild.id)
+        const itemToUpdateId = this.bandList.indexOf(itemToUpdate);
+        this.bandList[itemToUpdateId] = updatedBandFromChild;
+        const myClonedArray  = Object.assign([], this.bandList);
+        this.bandList = myClonedArray;
+        console.log('Content updated')
+      });
   }
 }

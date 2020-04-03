@@ -1,4 +1,4 @@
-<app-create-content class="center" (addContentEvent)="addContent($event)" (updateContentEvent)="updateContent($event)"></app-create-content>
+<app-create-content class="center" [startingId]="bandList.length" (addContentEvent)="addContent($event)" (updateContentEvent)="updateContent($event)"></app-create-content>
 
 <div class="center" mat-dialog-content>
   <mat-form-field>

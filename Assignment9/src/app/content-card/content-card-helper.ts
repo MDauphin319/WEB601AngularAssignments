@@ -1,5 +1,5 @@
 export interface Content {
-    readonly id: number;
+    readonly id?: number;
     author: string;
     imgUrl?: string;
     type?: string;

@@ -30,7 +30,6 @@ export class CreateContentComponent implements OnInit {
 
   resetNewBandContent() {
     this.newBandContent = {
-      id: 0,
       title: '',
       author: '',
       body: '',
